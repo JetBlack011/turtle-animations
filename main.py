@@ -29,7 +29,5 @@ shelly = turtle.Turtle()
 shelly.set_sprite(animations.Controller(states))
 shelly.sprite.set_state('idle')
 
-#while True:
-#    shelly.sprite.update()
-
-turtle.mainloop()
+while True:
+    screen.update()
