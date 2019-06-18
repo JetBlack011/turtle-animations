@@ -1,11 +1,12 @@
 import turtle
 from threading import Timer
 
+sprites = []
+
 class State:
-    def __init__(self, delay, shapes, controller):
+    def __init__(self, delay, shapes):
         self.delay = delay
         self.shapes = shapes
-        self.controller = controller
         self.index = 0
         self.current_shape = self.shapes[self.index]
     
@@ -15,7 +16,6 @@ class State:
         else:
             self.index += 1
         self.current_shape = self.shapes[self.index]
-        self.controller.shape(self.current_shape)
   
     def run(self):
         def func_wrapper():
@@ -28,13 +28,15 @@ class State:
         if self.timer:
             self.timer.cancel()
 
-class Controller(turtle.Turtle):
-    def __init__(self, states):
-        super(Controller, self).__init__()
+class Sprite(turtle.Turtle):
+    def __init__(self, states=None):
+        super(Sprite, self).__init__()
+
+        sprites.append(self)
     
         self.states = {}
         for key,state in states.iteritems():
-            self.states[key] = State(state["delay"] / 1000.0, state["shapes"], self)
+            self.states[key] = State(state["delay"] / 1000.0, state["shapes"])
       
         self.current_state = None
     
@@ -43,8 +45,10 @@ class Controller(turtle.Turtle):
             self.current_state.stop()
         self.current_state = self.states[identifier]
         self.current_state.run()
+    
+    def update(self):
+        self.shape(self.current_state.current_shape)
 
-def set_sprite(self, sprite):
-    self.sprite = sprite
-
-setattr(turtle.Turtle, 'set_sprite', set_sprite)
+def update():
+    for sprite in sprites:
+        sprite.update()

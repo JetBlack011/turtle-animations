@@ -25,9 +25,9 @@ states = {
     },
 }
 
-shelly = turtle.Turtle()
-shelly.set_sprite(animations.Controller(states))
-shelly.sprite.set_state('idle')
+shelly = animations.Sprite(states)
+shelly.set_state('idle')
 
 while True:
+    animations.update()
     screen.update()
