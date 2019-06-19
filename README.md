@@ -20,7 +20,7 @@ A Sprite can have as many states as desired, and they can alternatively be defin
 states = {
   'idle' : {
       'delay' : 100,
-      'shapes' : ['duck_down_l.gif', 'duck_up_l.gif', 'idle_l.gif']
+      'shapes' : ['idle01.gif', 'idle02.gif', 'idle03.gif']
   }
 }
 
