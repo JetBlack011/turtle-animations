@@ -4,7 +4,7 @@ A very simple wrapper enabling animations in the turtle library. Works via a col
 
 ## Usage
 
-Normally, to create a turtle object on the screen and change its image, one would do as such:
+Normally, to create a turtle object on the screen and change its shape, one would do as such:
 ```
 shelly = turtle.Turtle()
 shelly.shape('image.gif')
