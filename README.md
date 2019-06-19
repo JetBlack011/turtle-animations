@@ -27,7 +27,7 @@ states = {
 shelly = animations.Sprite(states)
 shelly.set_state('idle')
 ```
-States have an identifier, a delay per frame, and a list of shapes to rotate through. The `Sprite.add_state()` method takes these three values, respectively, as arguments. In addition, in order for any of the shapes to change, the static method udpate() must be called inside of the main game loop:
+States have an identifier, a delay per frame, and a list of shapes to rotate through. The `Sprite.add_state()` method takes these three values, respectively, as arguments. In addition, in order for any of the shapes to change, the static method `update()` must be called inside of the main game loop:
 ```
 shelly = animations.Sprite()
 shelly.add_state('idle', 100, ['idle01.gif', 'idle02.gif', 'idle03.gif'])
