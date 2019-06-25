@@ -1,6 +1,6 @@
 # turtle-animations
 
-A very simple wrapper enabling animations in the turtle library. Works via a collection of state machines working on separate threads to manipulate the current shape as which a turtle appears.
+A very simple wrapper enabling animations in the turtle library. Works via a collection of state machines working on separate threads to manipulate the turtle's current shape.
 
 ## Usage
 
